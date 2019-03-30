@@ -1013,7 +1013,7 @@ void CVideoDlg::ShowVideo1()
 {
 	m_wndLocal.ShowWindow(SW_HIDE);
 	m_wndLocal.SetBigShowFlag(FALSE);
-	for (int nIndex = 0; nIndex < 4; nIndex++) {
+	for (int nIndex = 0; nIndex < 1; nIndex++) {
 		m_wndVideo[nIndex].ShowWindow(SW_HIDE);
 		m_wndVideo[nIndex].SetBigShowFlag(FALSE);
 	}
@@ -1043,6 +1043,7 @@ void CVideoDlg::ShowVideo1()
 
 void CVideoDlg::ShowVideo4()
 {
+	count = 4;
 	m_wndLocal.ShowWindow(SW_HIDE);
 	m_wndLocal.SetBigShowFlag(FALSE);
 	for (int nIndex = 0; nIndex < 4; nIndex++) {
@@ -1076,6 +1077,7 @@ void CVideoDlg::ShowVideo4()
 
 void CVideoDlg::ShowVideo6()
 {
+	count = 6;
 	m_wndLocal.ShowWindow(SW_HIDE);
 	m_wndLocal.SetBigShowFlag(FALSE);
 	for (int nIndex = 0; nIndex < 6; nIndex++) {
@@ -1113,6 +1115,7 @@ void CVideoDlg::ShowVideo6()
 
 void CVideoDlg::ShowVideo8()
 {
+	count = 8;
 	m_wndLocal.ShowWindow(SW_HIDE);
 	m_wndLocal.SetBigShowFlag(FALSE);
 	for (int nIndex = 0; nIndex < 8; nIndex++) {
@@ -1238,7 +1241,7 @@ void CVideoDlg::RebindVideoWnd()
 	canvas.renderMode = RENDER_MODE_FIT;
 
 	POSITION pos = m_listWndInfo.GetHeadPosition();
-	for (int nIndex = 0; nIndex < 4; nIndex++) {
+	for (int nIndex = 0; nIndex < count; nIndex++) {
 		if (pos != NULL) {
 			AGVIDEO_WNDINFO &agvWndInfo = m_listWndInfo.GetNext(pos);
 			canvas.uid = agvWndInfo.nUID;

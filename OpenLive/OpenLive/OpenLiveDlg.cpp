@@ -198,7 +198,7 @@ void COpenLiveDlg::InitChildDialog()
 
 	m_dlgEnterChannel.ShowWindow(SW_SHOW);
 	m_lpCurDialog = &m_dlgEnterChannel;
-
+	m_dlgEnterChannel.SetCtrlPos();
 //    m_dlgSetup.SetVideoSolution(15);
 	m_dlgEnterChannel.SetVideoString(m_dlgSetup.GetVideoSolutionDes());
 }

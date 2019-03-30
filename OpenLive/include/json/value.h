@@ -601,6 +601,7 @@ Json::Value obj_value(Json::objectValue); // {}
 
   JSONCPP_STRING toStyledString() const;
 
+  JSONCPP_STRING toString() const;
   const_iterator begin() const;
   const_iterator end() const;
 

@@ -120,7 +120,7 @@ void CSetupDlg::InitCtrls()
 	m_btnReadFile.MoveWindow(80, 200, 60, 30, TRUE);
 	m_btnGetParam.MoveWindow(150, 200, 40, 30, TRUE);
 	m_btnSetParam.MoveWindow(200, 200, 40, 30, TRUE);
-	m_btnReadFile.ShowWindow(SW_HIDE);
+	m_btnReadFile.ShowWindow(SW_SHOW);
 	//
 	m_cmbEncoder.MoveWindow(80, ClientRect.Height() - 155, 160, 40, TRUE);
 	m_chkIntraRequest.MoveWindow(250, ClientRect.Height() - 160, 160, 40, TRUE);
@@ -343,8 +343,17 @@ void CSetupDlg::OnBnClickedButtonReadfile()
 				AParameter apm(engine);
 				int size = jsonOffline.size();
 				for (size_t i = 0; i < size; i++){
-					std::string strJson = jsonOffline[i].toStyledString();
-					apm->setParameters(strJson.c_str());
+					
+
+					std::string strJson = jsonOffline[i].toString();
+					CStringA csJson = strJson.c_str();
+
+					csJson.Replace("\t", "");
+					csJson.Replace("\n", "");
+					
+					//char szJson[MAX_PATH] = { 0 };
+					//::WideCharToMultiByte(CP_UTF8, 0, csJson, -1, szJson, MAX_PATH, NULL, NULL);
+					apm->setParameters(csJson);
 					//::SendMessage(m_hWnd, MSGID_EVENT_RECEIVE, reinterpret_cast<WPARAM>(strJson.c_str()), static_cast<LPARAM>(strJson.length()));
 
 				}

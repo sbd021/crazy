@@ -1481,6 +1481,12 @@ JSONCPP_STRING Value::toStyledString() const {
   return out;
 }
 
+JSONCPP_STRING Value::toString() const{
+	StreamWriterBuilder builder;
+	JSONCPP_STRING out = Json::writeString(builder, *this);
+	return out;
+}
+
 Value::const_iterator Value::begin() const {
   switch (type_) {
   case arrayValue:

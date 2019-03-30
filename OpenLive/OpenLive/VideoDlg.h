@@ -34,7 +34,7 @@ public:
 
 	void ShowControlButton(BOOL bShow = TRUE);
 
-	
+	int count = 1;
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
 	virtual BOOL OnInitDialog();
